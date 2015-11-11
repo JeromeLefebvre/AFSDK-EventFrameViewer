@@ -215,7 +215,7 @@ namespace PIWebAPIPractice1
                             {
                                 //Sometimes System.InvalidOperationException happens.
                                 Type t = val.Value.GetType();
-                                if (t.FullName != "System.InvalidOperationException" && t.FullName != "OSIsoft.AF.Asset.AFEnumerationValue")
+                                if (t.FullName != "System.InvalidOperationException")
                                 {
                                     if (chk == 0)
                                     {
@@ -237,11 +237,16 @@ namespace PIWebAPIPractice1
                                     }
                                     timedif = val.Timestamp.LocalTime - trendstarttime;
                                     
-                                    //EnumerationSet
+                                    //Displaying EnumerationSet value as number
                                     if (t.FullName == "OSIsoft.AF.Asset.AFEnumerationValue")
                                     {
-                                        //Write code to add EnumerationSet number to trend - Currently ignore it
-
+                                        //Errchk = 1;
+                                        AFEnumerationValue MyEnumerationValue = (AFEnumerationValue)val.Value;
+                                        // last value will be returned as 248. So ignore it
+                                        if (MyEnumerationValue.Value != 248)
+                                        {
+                                            chart1.Series[title].Points.AddXY(timedif.TotalSeconds, MyEnumerationValue.Value.ToString());
+                                        }
                                     }
                                     else
                                     {
