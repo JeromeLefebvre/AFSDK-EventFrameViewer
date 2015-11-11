@@ -135,10 +135,9 @@ namespace EventFrameViewer
                 {
                     string[] displayvalues = new string[4];
                     displayvalues[0] = attr.Name;
-                    
                     try
                     {
-                        displayvalues[1] = attr.Data.RecordedValue(new AFTime(myEF.StartTime),AFRetrievalMode.AtOrAfter,null).ToString();
+                        displayvalues[1] = attr.Data.RecordedValue(myEF.EndTime,AFRetrievalMode.AtOrAfter,null).ToString();
                     }
                     catch
                     {
@@ -249,7 +248,7 @@ namespace EventFrameViewer
                                 {
                                     Errchk = 1;
                                     //Write code for System.InvalidOperationException - Currently ignore it
-                                    //AFValue val2 = myEFAttr.GetValue();
+                                    //AFValue val2 = myEFAttr.GetValue(endTime,null);
                                     //timedif = endTime - startTime;
                                     //chart1.Series[title].Points.AddXY(0, val2.Value.ToString());
                                     //chart1.Series[title].Points.AddXY(timedif.TotalSeconds, val2.Value.ToString());
@@ -260,7 +259,7 @@ namespace EventFrameViewer
                         {
                             Errchk = 1;
                             //If error happens, write code - Currently ignore it
-                            //AFValue val = myEFAttr.GetValue();
+                            //AFValue val = myEFAttr.GetValue(endTime,null);
                             //chart1.Series[title].Points.AddXY(0, val.Value.ToString());
                             //chart1.Series[title].Points.AddXY(timedif.TotalSeconds, val.Value.ToString());
                         }
