@@ -32,6 +32,7 @@ namespace PIWebAPIPractice1
         public AFValue tmpval;
         public TimeSpan maxtimedif = new TimeSpan(0);
         public Int32 num = 1;
+        public Int32 Errchk = 0;
         public Form1()
         {
             InitializeComponent();
@@ -151,7 +152,14 @@ namespace PIWebAPIPractice1
                     }
                     catch (Exception ex)
                     {
-                        displayvalues[1] = attr.GetValue().ToString();
+                        try
+                        {
+                            displayvalues[1] = attr.GetValue().ToString();
+                        }
+                        catch (Exception ex2)
+                        {
+                            MessageBox.Show(ex2.Message);
+                        }
                     }
                     displayvalues[2] = myEF.Name;
                     displayvalues[3] = myEF.UniqueID;
@@ -243,6 +251,7 @@ namespace PIWebAPIPractice1
                                 }
                                 else
                                 {
+                                    Errchk = 1;
                                     //Write code for System.InvalidOperationException - Currently ignore it
                                     //AFValue val2 = myEFAttr.GetValue();
                                     //timedif = endTime - startTime;
@@ -253,23 +262,28 @@ namespace PIWebAPIPractice1
                         }
                         catch
                         {
+                            Errchk = 1;
                             //If error happens, write code - Currently ignore it
                             //AFValue val = myEFAttr.GetValue();
                             //chart1.Series[title].Points.AddXY(0, val.Value.ToString());
                             //chart1.Series[title].Points.AddXY(timedif.TotalSeconds, val.Value.ToString());
                         }
-                        //Set minimum and maximum time
-                        chart1.ChartAreas[0].AxisX.Minimum = 0;
-                        if (maxtimedif > timedif)
+                        if (Errchk == 0)
                         {
-                            chart1.ChartAreas[0].AxisX.Maximum = maxtimedif.TotalSeconds;
+                            //If there is no error, Set minimum and maximum time
+                            chart1.ChartAreas[0].AxisX.Minimum = 0;
+                            if (maxtimedif > timedif)
+                            {
+                                chart1.ChartAreas[0].AxisX.Maximum = maxtimedif.TotalSeconds;
+                            }
+                            else
+                            {
+                                chart1.ChartAreas[0].AxisX.Maximum = timedif.TotalSeconds;
+                                maxtimedif = timedif;
+                            }
+                            ++num;
                         }
-                        else
-                        {
-                            chart1.ChartAreas[0].AxisX.Maximum = timedif.TotalSeconds;
-                            maxtimedif = timedif;
-                        }
-                        ++num;
+                        Errchk = 0;                       
                     }
                 }
             }
