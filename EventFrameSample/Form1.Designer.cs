@@ -1,4 +1,4 @@
-﻿namespace PIWebAPIPractice1
+﻿namespace EventFrameViewer
 {
     partial class Form1
     {

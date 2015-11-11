@@ -9,7 +9,7 @@ using OSIsoft.AF.Data;
 using OSIsoft.AF.PI;
 using OSIsoft.AF.EventFrame;
 
-namespace PIWebAPIPractice1
+namespace EventFrameViewer
 {
 
     public partial class Form1 : Form

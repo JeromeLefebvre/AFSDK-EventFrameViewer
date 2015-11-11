@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PIWebAPIPractice1
+namespace EventFrameViewer
 {
     static class Program
     {
