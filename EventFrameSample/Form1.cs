@@ -20,16 +20,6 @@ namespace PIWebAPIPractice1
         public PIServer myPIServer;
         public AFElementTemplates myElementTemplates;
         public AFElementTemplate myElementTemplate;
-        public int updateval = 0;
-        public int updateval2 = 0;
-        public int monitval = 0;
-        public PISystems _myPISystems;
-        public PISystem _myAFServer;
-        public AFDatabase _myAFDatabase;
-        public object sysCookie, dbCookie;
-        public AFElement _myElement;
-        public AFAttribute _myAttribute;
-        public AFValue tmpval;
         public TimeSpan maxtimedif = new TimeSpan(0);
         public Int32 num = 1;
         public Int32 Errchk = 0;
@@ -150,7 +140,7 @@ namespace PIWebAPIPractice1
                     {
                         displayvalues[1] = attr.Data.RecordedValue(new AFTime(myEF.StartTime),AFRetrievalMode.AtOrAfter,null).ToString();
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         try
                         {
@@ -204,12 +194,12 @@ namespace PIWebAPIPractice1
                         //Find Selected Attribute
                         AFAttribute myEFAttr = myEF.Attributes[SelectedEFattr.Text];
 
-                        DateTime trendstarttime = DateTime.Parse("2000/1/1");
+                        DateTime trendstarttime = new DateTime(0);
                         //Check time difference between start time and end time
                         TimeSpan timedif = endTime - startTime;
                         try
                         {
-                            AFValues vals = myEFAttr.Data.PlotValues(timerange, 1000, null);
+                            AFValues vals = myEFAttr.Data.PlotValues(timerange, 100, null);
                             Int32 chk = 0;
                             foreach (AFValue val in vals)
                             {
@@ -225,6 +215,7 @@ namespace PIWebAPIPractice1
                                             //add trend to chart1
                                             chart1.Series.Add(title);
                                             chart1.Series[title].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                                            chart1.Series[title].BorderWidth = 2; // Line width
                                             chart1.Series[title].ToolTip = "#SERIESNAME\r\nValue : #VALY{N2}\r\nTime : #VALX{N0}";
                                             chart1.ChartAreas[0].AxisX.Title = "Seconds";
                                         }
