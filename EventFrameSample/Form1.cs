@@ -305,9 +305,9 @@ namespace EventFrameViewer
 
         private void chart1_DoubleClick(object sender, EventArgs e)
         {
-            if (toggle == 0)
+            if (toggle == 0 && chart1.Series.Count> 0)
             {
-                //Display maximum size
+                //Display maximum size. If there is more than 1 trend
                 chart1.Location = new System.Drawing.Point(0, 0);
                 chart1.Size = new System.Drawing.Size(1280, 690);
                 toggle = 1;
