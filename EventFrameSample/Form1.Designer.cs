@@ -48,7 +48,7 @@
             // 
             this.piSystemPicker1.AccessibleDescription = "Select PI System";
             this.piSystemPicker1.AccessibleName = "Select PI System";
-            this.piSystemPicker1.Caption = "Error";
+            this.piSystemPicker1.Caption = "エラー";
             this.piSystemPicker1.Cursor = System.Windows.Forms.Cursors.Default;
             this.piSystemPicker1.Location = new System.Drawing.Point(12, 10);
             this.piSystemPicker1.LoginPromptSetting = OSIsoft.AF.UI.PISystemPicker.LoginPromptSettingOptions.Default;
@@ -82,7 +82,7 @@
             // 
             this.afDatabasePicker1.AccessibleDescription = "Specify Database";
             this.afDatabasePicker1.AccessibleName = "Specify Database";
-            this.afDatabasePicker1.Caption = "Error";
+            this.afDatabasePicker1.Caption = "エラー";
             this.afDatabasePicker1.Location = new System.Drawing.Point(12, 41);
             this.afDatabasePicker1.Name = "afDatabasePicker1";
             this.afDatabasePicker1.ShowBegin = false;
@@ -189,6 +189,7 @@
             // 
             // chart1
             // 
+            this.chart1.AllowDrop = true;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";

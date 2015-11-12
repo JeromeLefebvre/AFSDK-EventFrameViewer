@@ -27,6 +27,7 @@ namespace EventFrameViewer
         {
             InitializeComponent();
             afDatabasePicker1.SystemPicker = piSystemPicker1;
+            
         }
 
         public void piSystemPicker1_ConnectionChange(object sender, OSIsoft.AF.UI.SelectionChangeEventArgs e)
@@ -217,6 +218,9 @@ namespace EventFrameViewer
                                             chart1.Series[title].BorderWidth = 2; // Line width
                                             chart1.Series[title].ToolTip = "#SERIESNAME\r\nValue : #VALY{N2}\r\nTime : #VALX{N0}";
                                             chart1.ChartAreas[0].AxisX.Title = "Seconds";
+                                            //Zoom function
+                                            chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+                                            chart1.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
                                         }
                                         catch (Exception ex)
                                         {
