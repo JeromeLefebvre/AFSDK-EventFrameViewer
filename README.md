@@ -7,6 +7,6 @@ Can select EF/EFs, also can select attribute/attributes.
 Click “Add trend” button add Trends to .net chart object.
 Multiple items can be selected and add trends at once.
 Trend can zoom in by drawing square by mouse.
-Trend can double click and display maximum size.
+Trend can be double-clicked and display maximum size trends.
 On mouse the line, tool tip shows up (Time and value).
 
