@@ -23,6 +23,7 @@ namespace EventFrameViewer
         public TimeSpan maxtimedif = new TimeSpan(0);
         public Int32 num = 1;
         public Int32 Errchk = 0;
+        public Int32 toggle = 0;
         public Form1()
         {
             InitializeComponent();
@@ -300,6 +301,25 @@ namespace EventFrameViewer
             //Clear ListBoxes
             EFListView.Items.Clear();
             EFAttrView.Items.Clear();
+        }
+
+        private void chart1_DoubleClick(object sender, EventArgs e)
+        {
+            if (toggle == 0)
+            {
+                //Display maximum size
+                chart1.Location = new System.Drawing.Point(0, 0);
+                chart1.Size = new System.Drawing.Size(1280, 690);
+                toggle = 1;
+            }
+            else
+            {
+                //Display normal size
+                chart1.Location = new System.Drawing.Point(242, 329);
+                chart1.Size = new System.Drawing.Size(1019, 328);
+                toggle = 0;
+            }
+            
         }
     }
 }

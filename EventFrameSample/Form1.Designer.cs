@@ -17,8 +17,8 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.piSystemPicker1 = new OSIsoft.AF.UI.PISystemPicker();
             this.afTreeView1 = new OSIsoft.AF.UI.AFTreeView();
             this.afDatabasePicker1 = new OSIsoft.AF.UI.AFDatabasePicker();
@@ -190,15 +190,16 @@
             // chart1
             // 
             this.chart1.AllowDrop = true;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(242, 329);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(1019, 328);
             this.chart1.TabIndex = 47;
             this.chart1.Text = "chart1";
+            this.chart1.DoubleClick += new System.EventHandler(this.chart1_DoubleClick);
             // 
             // EFAttrView
             // 
@@ -267,12 +268,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 667);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.EventFrameTemplateLabel);
             this.Controls.Add(this.EventFrameTemplateComboBox);
             this.Controls.Add(this.ClearTrendButton);
             this.Controls.Add(this.AddTrendButton);
             this.Controls.Add(this.EFAttrView);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.EFListView);
             this.Controls.Add(this.EndTimeLabel);
             this.Controls.Add(this.StartTimeLabel);
