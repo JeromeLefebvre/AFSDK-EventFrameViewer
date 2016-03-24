@@ -27,13 +27,12 @@ namespace EventFrameViewer
         public Form1()
         {
             InitializeComponent();
-            afDatabasePicker1.SystemPicker = piSystemPicker1;
+            afDatabasePicker1.SystemPicker = piSystemPicker;
             
         }
 
-        public void piSystemPicker1_ConnectionChange(object sender, OSIsoft.AF.UI.SelectionChangeEventArgs e)
+        public void piSystemPicker_ConnectionChange(object sender, OSIsoft.AF.UI.SelectionChangeEventArgs e)
         {
-
             //Set AF Server to the current selected object
             myAFServer = (PISystem)e.SelectedObject;
             AFDatabases databaseList = myAFServer.Databases;

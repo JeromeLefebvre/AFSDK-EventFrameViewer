@@ -17,9 +17,9 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            this.piSystemPicker1 = new OSIsoft.AF.UI.PISystemPicker();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            this.piSystemPicker = new OSIsoft.AF.UI.PISystemPicker();
             this.afTreeView1 = new OSIsoft.AF.UI.AFTreeView();
             this.afDatabasePicker1 = new OSIsoft.AF.UI.AFDatabasePicker();
             this.GetEventFrames = new System.Windows.Forms.Button();
@@ -44,29 +44,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
-            // piSystemPicker1
+            // piSystemPicker
             // 
-            this.piSystemPicker1.AccessibleDescription = "Select PI System";
-            this.piSystemPicker1.AccessibleName = "Select PI System";
-            this.piSystemPicker1.Caption = "エラー";
-            this.piSystemPicker1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.piSystemPicker1.Location = new System.Drawing.Point(12, 10);
-            this.piSystemPicker1.LoginPromptSetting = OSIsoft.AF.UI.PISystemPicker.LoginPromptSettingOptions.Default;
-            this.piSystemPicker1.Name = "piSystemPicker1";
-            this.piSystemPicker1.ShowBegin = false;
-            this.piSystemPicker1.ShowDelete = false;
-            this.piSystemPicker1.ShowEnd = false;
-            this.piSystemPicker1.ShowFind = false;
-            this.piSystemPicker1.ShowImages = false;
-            this.piSystemPicker1.ShowNavigation = false;
-            this.piSystemPicker1.ShowNew = false;
-            this.piSystemPicker1.ShowNext = false;
-            this.piSystemPicker1.ShowNoEntries = false;
-            this.piSystemPicker1.ShowPrevious = false;
-            this.piSystemPicker1.ShowProperties = false;
-            this.piSystemPicker1.Size = new System.Drawing.Size(211, 20);
-            this.piSystemPicker1.TabIndex = 0;
-            this.piSystemPicker1.ConnectionChange += new OSIsoft.AF.UI.ConnectionChangeEventHandler(this.piSystemPicker1_ConnectionChange);
+            this.piSystemPicker.AccessibleDescription = "Select PI System";
+            this.piSystemPicker.AccessibleName = "Select PI System";
+            this.piSystemPicker.Caption = "エラー";
+            this.piSystemPicker.Cursor = System.Windows.Forms.Cursors.Default;
+            this.piSystemPicker.Location = new System.Drawing.Point(12, 10);
+            this.piSystemPicker.LoginPromptSetting = OSIsoft.AF.UI.PISystemPicker.LoginPromptSettingOptions.Default;
+            this.piSystemPicker.Name = "piSystemPicker";
+            this.piSystemPicker.ShowBegin = false;
+            this.piSystemPicker.ShowDelete = false;
+            this.piSystemPicker.ShowEnd = false;
+            this.piSystemPicker.ShowFind = false;
+            this.piSystemPicker.ShowImages = false;
+            this.piSystemPicker.ShowNavigation = false;
+            this.piSystemPicker.ShowNew = false;
+            this.piSystemPicker.ShowNext = false;
+            this.piSystemPicker.ShowNoEntries = false;
+            this.piSystemPicker.ShowPrevious = false;
+            this.piSystemPicker.ShowProperties = false;
+            this.piSystemPicker.Size = new System.Drawing.Size(211, 20);
+            this.piSystemPicker.TabIndex = 0;
+            this.piSystemPicker.ConnectionChange += new OSIsoft.AF.UI.ConnectionChangeEventHandler(this.piSystemPicker_ConnectionChange);
             // 
             // afTreeView1
             // 
@@ -190,10 +190,10 @@
             // chart1
             // 
             this.chart1.AllowDrop = true;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(242, 329);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(1019, 328);
@@ -282,7 +282,7 @@
             this.Controls.Add(this.GetEventFrames);
             this.Controls.Add(this.afDatabasePicker1);
             this.Controls.Add(this.afTreeView1);
-            this.Controls.Add(this.piSystemPicker1);
+            this.Controls.Add(this.piSystemPicker);
             this.Name = "Form1";
             this.Text = "Event Frame Viewer";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -293,7 +293,7 @@
 
         #endregion
 
-        private OSIsoft.AF.UI.PISystemPicker piSystemPicker1;
+        private OSIsoft.AF.UI.PISystemPicker piSystemPicker;
         private OSIsoft.AF.UI.AFTreeView afTreeView1;
         private OSIsoft.AF.UI.AFDatabasePicker afDatabasePicker1;
         private System.Windows.Forms.Button GetEventFrames;
